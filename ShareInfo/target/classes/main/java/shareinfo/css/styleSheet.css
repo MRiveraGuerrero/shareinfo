@@ -1,0 +1,135 @@
+article, section, aside, hgroup, nav, header, footer, figure, figcaption {
+  display: block;
+}
+
+/* display: specifies the type of box used for an HTML element. */
+html {
+  font-family: helvetica, arial, 'sans serif';
+  }
+body {
+  margin:0px;
+  padding: 0px;
+}
+
+/* titulos */
+h1, h2, h3 {
+  /*font-family: 'AmalgamationRegular';*/
+   color: #ffffff;   
+  /*text-shadow: 3px 3px 5px #000000;*/
+  font-size: 15px;
+}
+h1
+{
+	/*text-shadow: 3px 3px 5px #000000;*/
+	 font-size:20px
+}
+
+/* tablas */
+table {
+  background-color: #cccccc;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 5px;
+}
+
+.main_table_head {
+  background-color: #888888;
+}
+
+th,td {
+  padding: 5px;
+  font-size: 15px;
+}
+
+tr:nth-child(odd) {
+  background-color: #aaaaaa;
+}
+
+/* imagenes */
+hgroup {
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  padding: 0px 0 0px 180px;
+  height: 90px;
+}
+
+#floatingskull {
+  position: fixed;
+  bottom: 1em;
+  right: 30%;
+}
+
+/* partes del documento */
+section, aside {
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 4px;
+  background-color: #666699;
+}
+
+header {
+  padding: 5px 5px 5px 5px;
+  margin: 4px;
+  background-color: rgb(83, 33, 168);
+  background-color: rgb(83, 33, 168);
+  font-size:18px;
+}
+
+footer {
+  padding: 10px;
+  margin: 4px;
+  background-color: rgb(83, 33, 168);
+  font-size: 0.8em;
+}
+
+nav {
+  background-color: white;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  border: 4px outset;
+  border-color: #99FF33; 
+}
+
+figure {
+  padding: 20px;
+  background-color: white;
+  margin: 0 auto;
+  width: 25%;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -o-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+  box-shadow: black 5px 5px 5px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;  
+}
+
+figcaption {
+  text-align: center;
+}
+button {
+  font-size: 15px;
+  }
+textarea{
+  font-size: 20px;
+    }
+
+#message{
+  cols="20";
+  rows="2";
+  }
+font {
+  color: white;
+  }
+
+a {
+	text-decoration: none;
+}
