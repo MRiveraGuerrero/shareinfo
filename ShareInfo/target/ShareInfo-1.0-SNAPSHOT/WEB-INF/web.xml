@@ -3,7 +3,7 @@
   <display-name>ShareInfo</display-name>
 
   <welcome-file-list>
-    <welcome-file>/html/loginForm.html</welcome-file>
+    <welcome-file>/jsp/loginForm.jsp</welcome-file>
   </welcome-file-list>
 
   <session-config>
@@ -47,5 +47,13 @@
   <servlet-mapping>
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/servlet/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>shareinfo.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/servlet/LogoutServlet</url-pattern>
   </servlet-mapping>
 </web-app>

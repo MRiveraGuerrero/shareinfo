@@ -20,7 +20,7 @@ public class MySessionListener implements HttpSessionListener {
 		ServletContext context = session.getServletContext();
 		HashMap<String, String> loggedinUsers = (HashMap) context.getAttribute("loggedin_users");
 		System.out.println("     Loggedin users: " + loggedinUsers.toString());
-		
+
 		for(Map.Entry<String, String> entry : loggedinUsers.entrySet()) {
             if(entry.getValue().equals(sessionID)) {
             	loggedinUsers.remove(entry.getKey());
@@ -30,6 +30,7 @@ public class MySessionListener implements HttpSessionListener {
             	break;
             }
 		}
+
 	}
  
 }

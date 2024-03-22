@@ -37,10 +37,12 @@ public class MainServlet extends HttpServlet{
     	System.out.println("---> Entrando en doPost() de MainServlet"+ request.getSession(false));
 		
     	if(request.getSession(false) == null) {
-    		System.out.println("     Usuario NO logeado: Redireccionar al usuario al loginForm.html");
+    		System.out.println("     Usuario NO logeado: Redireccionar al usuario al loginForm.jsp");
     		
-			RequestDispatcher rd = request.getRequestDispatcher("/html/loginForm.html");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/loginForm.jsp");
+			request.setAttribute("error", "Sesión caducada");
 			rd.forward(request, response);
+
 			
     	} else {
     		System.out.println("     Usuario logeado");
@@ -49,19 +51,9 @@ public class MainServlet extends HttpServlet{
     		if(message!= null) {
     			
     			HttpSession session = request.getSession();
-    			String sessionID = session.getId();
-    			ServletContext context = request.getServletContext();
-    			
-    			HashMap<String, String> loggedinUsers = (HashMap) context.getAttribute("loggedin_users");
-    			System.out.println("     Usuarios Activos: " + loggedinUsers.toString());
-    			
-    			for(Map.Entry<String, String> entry : loggedinUsers.entrySet()) {
-    	            if(entry.getValue().equals(sessionID)) {
-    	            	String username = entry.getKey();
-    	            	mySQLdb.setMessageInfo(message, username);
-    	            	break;
-    	            }
-    			}
+				String username = (String) session.getAttribute("username");
+				mySQLdb.setMessageInfo(message, username);
+
     		}
     		
     		ArrayList<MessageInfo> messageList = mySQLdb.getAllMessages();
